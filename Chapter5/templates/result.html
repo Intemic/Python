@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p>Содержимое вашего запроса:</p>
+<table>
+<tr><td>Фраза:</td><td>{{ the_phrase }}</td></tr>
+<tr><td>Символы:</td><td>{{ the_letters }}</td></tr>
+</table>
+
+<p>Поиск символов "{{ the_letters }}" в строке "{{ the_phrase }} выдал следующий результат:"</p>
+<h3>{{ the_result }}</h3>
+
+{% endblock %}

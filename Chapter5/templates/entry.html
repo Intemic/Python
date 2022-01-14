@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='search4'>
+<table>
+<p>Используйте эту форму для запуска поиска вхождения символов:</p>
+<tr><td>Фраза:</td><td><input name='phrase' type='TEXT' width='60'></td></tr>
+<tr><td>Символы:</td><td><input name='letters' type='TEXT' value='аеиуо'></td></tr>
+</table>
+<p>Когда будите готовы, нажмите кнопку</p>
+<p><input value='Найти' type='SUBMIT'></p>
+</form> 
+
+{% endblock %}
