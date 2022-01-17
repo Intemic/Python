@@ -5,9 +5,16 @@ from DBcm import UseDatabase
 app = Flask(__name__)
 
 app.config['dbconfig'] = {"host": "127.0.0.1",
+<<<<<<< HEAD
                         "user": "vsearch",
                         "password": "vsearchpasswd",
                         "database": "vsearchlogDB"}
+=======
+                          "user": "vsearch",
+                          "password": "vsearchpasswd",
+                          "database": "vsearchlogDB"}
+
+>>>>>>> 2a08623cc9dca40aeb98a5d798cdd7a9b0326a22
 
 def log_request(req: "flask_request", res: str) -> None:
     with open("vsearch.log", 'a') as log:
@@ -15,11 +22,7 @@ def log_request(req: "flask_request", res: str) -> None:
 
 
 def log_db(req: "flask_request", res: str) -> None:
-    dbconfig = {"host": "127.0.0.1",
-                "user": "vsearch",
-                "password": "vsearchpasswd",
-                "database": "vsearchlogDB"}
-    with UseDatabase(dbconfig) as cursor:
+    with UseDatabase(app.config['dbconfig']) as cursor:
         _SQL = """insert into log
                 (phrase, letters, ip, browser_string, results)
                 values
@@ -50,11 +53,17 @@ def entry_page() -> 'html':
 @app.route('/viewlog')
 def view_the_log() -> 'html':
     contents = []
-    with open("vsearch.log") as log:
-        for line in log:
-            spisok = escape(line).split('|')
-            contents.append(spisok)
-    titles = ('Form Data', 'Remote_addr', 'User_agent', 'Results')
+#    with open("vsearch.log") as log:
+#        for line in log:
+#            spisok = escape(line).split('|')
+#            contents.append(spisok)
+    with UseDatabase(app.config['dbconfig']) as cursor:
+        _SQL = """select phrase, letters, ip, browser_string, results
+                    from log"""
+        cursor.execute(_SQL)
+        contents = cursor.fetchall()
+
+    titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
     return render_template("viewlog.html",
                            the_title="Лог выполнения",
                            the_row_titles=titles,
