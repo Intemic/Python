@@ -57,7 +57,7 @@ def view_the_log() -> 'html':
         cursor.execute(_SQL)
         contents = cursor.fetchall()
 
-    titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
+    titles = ('Строка', 'Фраза', 'Ip адрес', ',Браузер', 'Результат')
     return render_template("viewlog.html",
                            the_title="Лог выполнения",
                            the_row_titles=titles,
