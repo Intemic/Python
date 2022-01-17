@@ -5,10 +5,16 @@ from DBcm import UseDatabase
 app = Flask(__name__)
 
 app.config['dbconfig'] = {"host": "127.0.0.1",
+<<<<<<< HEAD
+                        "user": "vsearch",
+                        "password": "vsearchpasswd",
+                        "database": "vsearchlogDB"}
+=======
                           "user": "vsearch",
                           "password": "vsearchpasswd",
                           "database": "vsearchlogDB"}
 
+>>>>>>> 2a08623cc9dca40aeb98a5d798cdd7a9b0326a22
 
 def log_request(req: "flask_request", res: str) -> None:
     with open("vsearch.log", 'a') as log:
