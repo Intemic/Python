@@ -35,6 +35,7 @@ def do_login() -> str:
     return 'Теперь вы в системе'
 
 
+
 @app.route('/logout')
 def do_logout() -> str:
     session.pop('logged_in')
