@@ -7,3 +7,5 @@ ImmutableMultiDict([('phrase', 'еще значение'), ('letters', 'аеиу
 ImmutableMultiDict([('phrase', 'выаыавыаыаавы'), ('letters', 'аеиуо')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58|{'а'}
 ImmutableMultiDict([('phrase', 'я/ч/ч/ячч/'), ('letters', 'аеиуо')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58|set()
 ImmutableMultiDict([('phrase', 'джвыажваузкцавыа'), ('letters', 'аеиуо')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58|{'у', 'а'}
+ImmutableMultiDict([('phrase', 'орлрлрло'), ('letters', 'аеиуо')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58|{'о'}
+ImmutableMultiDict([('phrase', 'ыфывфвфывв'), ('letters', 'аеиуо')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58|set()
