@@ -16,14 +16,12 @@ with open('buzzers.csv') as data:
 pprint.pprint(flights)
 print()
 
-"""
-flights2 = {}
-for k, v in flights.items():
-    flights2[convert2ampm(k)] = v.title()
-"""
+fts = {convert2ampm(k): v.title() for k, v in flights.items()}
 
-more_flights = {convert2ampm(k): v.title() for k, v in flights.items()}
-
-#pprint.pprint(flights2)
+pprint.pprint(fts)
 print()
-pprint.pprint(more_flights)
+
+when = {dest : [k for k, v in fts.items() if v == dest] for dest in set(fts.values())}
+
+pprint.pprint(when)
+print()
