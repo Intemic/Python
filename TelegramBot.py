@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from Parser import News, Sitv
 
-bot = telebot.TeleBot('5278921028:AAFElmUG_FepC1EoIXJLV8y6pw0yV7O8q_0')
+bot = telebot.TeleBot('')
 
 @bot.message_handler(commands= ['start'])
 def start(message):
